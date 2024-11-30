@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="blog-list-wrapper">
+{% if posts %}
+    <ul>
+        {% for post in posts %}
+            <li>
+                <article>
+                    <h2><a href="{% url 'blog_detail' slug=post.slug %}">{{ post.title }}</a></h2>
+                    <p>{{ post.published_date|date:"F j, Y" }}</p>
+                    <p>{{ post.excerpt }}</p>
+                </article>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts available.</p>
+{% endif %}
+</div>
+{% endblock %}

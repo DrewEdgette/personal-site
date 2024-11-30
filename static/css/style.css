@@ -1,0 +1,243 @@
+/* #################################################### */
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button, input, textarea, select {
+    font: inherit; /* Inherit font styles */
+}
+
+/* #################################################### */
+/* Root and Color Scheme */
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    color: light-dark(#121212, #fdfdfd);
+    background-color: light-dark(#fdfdfd, #121212);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+}
+
+/* #################################################### */
+/* Header Styles */
+header {
+    padding: 14px 14px;
+    border-bottom: solid 1px light-dark(#e0e0e0, #5c5c5c);
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 745px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative; /* Needed for dropdown positioning */
+}
+
+header .drew {
+    font-size: 1.5em;
+}
+
+/* Navbar Styles */
+header .navbar ul {
+    display: flex; /* Show navbar by default for desktop */
+    gap: 20px; /* Spacing between links */
+    list-style: none;
+    position: static; /* Reset positioning for desktop */
+    padding: 0;
+}
+
+header .navbar a {
+    font-size: 1em;
+    text-align: left; /* Align text for dropdown appearance */
+    padding: 0; /* No extra padding for desktop links */
+}
+
+/* #################################################### */
+/* Burger Menu Styles */
+.burger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: auto; /* Aligns burger to the far right */
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: light-dark(#121212, #fdfdfd); /* Matches color scheme */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger.open .burger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.open .burger-line:nth-child(2) {
+    opacity: 0; /* Hides the middle line */
+}
+
+.burger.open .burger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Show the burger on small screens */
+@media (max-width: 700px) {
+    .burger {
+        display: flex; /* Make sure burger is visible on mobile */
+    }
+}
+
+/* #################################################### */
+/* Responsive Styles */
+@media (max-width: 700px) {
+    header .navbar ul {
+        display: none; /* Hide navbar by default on small screens */
+        flex-direction: column; /* Stack items vertically for mobile dropdown */
+        gap: 10px;
+        position: absolute; /* Use absolute positioning for dropdown */
+        top: calc(100% + 10px); /* Position below the header */
+        right: 14px;
+        background-color: light-dark(#fdfdfd, #121212); /* Match color scheme */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add dropdown effect */
+        padding: 10px;
+        border-radius: 8px;
+        z-index: 1000; /* Ensure it appears above other elements */
+    }
+
+    header .navbar ul.active {
+        display: flex; /* Show navbar when the burger menu is active */
+    }
+
+    header .navbar li {
+        margin-left: 0; /* Remove left margin for dropdown items */
+    }
+
+    .burger {
+        display: flex; /* Show burger menu only on mobile screens */
+    }
+}
+
+/* #################################################### */
+/* Main Content Styles */
+main {
+    margin: 20px auto;
+    font-size: 1em;
+    padding: 14px;
+}
+
+.main-wrapper {
+    max-width: 745px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+
+/* #################################################### */
+/* Code Styling */
+.codehilite {
+    background: #222e39; /* Dark background for Atlantic Night */
+    color: #cdd3de; /* Light text color */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding: 1em; /* Add padding for readability */
+    border-radius: 5px; /* Optional: Rounded corners */
+    font-family: 'Fira Code', monospace; /* Monospaced font */
+    line-height: 1.5;
+}
+
+/* #################################################### */
+/* Home Wrapper Styles */
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.home-wrapper a {
+    color: light-dark(blue, paleturquoise);
+}
+
+
+/* #################################################### */
+/* blog_list Wrapper Styles */
+.blog-list-wrapper ul{
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+
+
+/* #################################################### */
+/* blog Wrapper Styles */
+.blog-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.blog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.blog-title h1 {
+    text-transform: uppercase;
+}
+
+.blog-content a {
+    color: light-dark(blue, paleturquoise);
+}
+
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+}
