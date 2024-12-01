@@ -10,15 +10,9 @@ load_dotenv()
 # Base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
-
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG is True on Windows, False on Linux
 DEBUG = platform.system() == "Windows"
-
-# Allowed Hosts
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 # Application definition
 INSTALLED_APPS = [
@@ -41,6 +35,13 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://drewedgette.dev',
+    'http://drewedgette.dev',
+    '157.245.210.178',
+]
+
 
 ROOT_URLCONF = "personal.urls"
 
