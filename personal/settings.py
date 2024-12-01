@@ -1,27 +1,24 @@
-from django.core.management.utils import get_random_secret_key
 from pathlib import Path
 import os
-import environ
+from dotenv import load_dotenv
+from django.core.management.utils import get_random_secret_key
+import platform
 
-# Initialize environment variables
-env = environ.Env(
-    DEBUG=(bool, False),
-    DEVELOPMENT_MODE=(bool, False),
-)
-environ.Env.read_env(os.path.join(Path(__file__).resolve().parent.parent, ".env"))
+# Load environment variables from .env file
+load_dotenv()
 
 # Base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("DJANGO_SECRET_KEY", default=get_random_secret_key())
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DEBUG", default=False)
+# DEBUG is True on Windows, False on Linux
+DEBUG = platform.system() == "Windows"
 
-DEVELOPMENT_MODE = env("DEVELOPMENT_MODE", default=False)
-
-ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["127.0.0.1", "localhost"])
+# Allowed Hosts
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 # Application definition
 INSTALLED_APPS = [
