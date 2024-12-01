@@ -65,18 +65,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "personal.wsgi.application"
 
-# Database
-if DEVELOPMENT_MODE:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
-else:
-    DATABASES = {
-        "default": env.db("DATABASE_URL", default="postgres://user:password@localhost/dbname"),
-    }
+}
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
