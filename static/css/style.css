@@ -133,6 +133,24 @@ header .navbar a {
     }
 }
 
+
+
+
+/* #################################################### */
+/* Code Styling */
+.codehilite {
+    background: #222e39; /* Dark background for Atlantic Night */
+    color: #cdd3de; /* Light text color */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding: 1em; /* Add padding for readability */
+    border-radius: 5px; /* Optional: Rounded corners */
+    font-family: 'Fira Code', monospace; /* Monospaced font */
+    line-height: 1.5;
+    font-size: 1.7em;
+}
+
+
+
 /* #################################################### */
 /* Responsive Styles */
 @media (max-width: 700px) {
@@ -161,6 +179,10 @@ header .navbar a {
     .burger {
         display: flex; /* Show burger menu only on mobile screens */
     }
+
+    .codehilite {
+        font-size: 1em;
+    }
 }
 
 /* #################################################### */
@@ -180,18 +202,6 @@ h1, h2 {
     font-weight: normal;
 }
 
-/* #################################################### */
-/* Code Styling */
-.codehilite {
-    background: #222e39; /* Dark background for Atlantic Night */
-    color: #cdd3de; /* Light text color */
-    overflow-x: auto; /* Enables horizontal scrolling */
-    padding: 1em; /* Add padding for readability */
-    border-radius: 5px; /* Optional: Rounded corners */
-    font-family: 'Fira Code', monospace; /* Monospaced font */
-    line-height: 1.5;
-    font-size: 1.5em;
-}
 
 /* #################################################### */
 /* Home Wrapper Styles */
