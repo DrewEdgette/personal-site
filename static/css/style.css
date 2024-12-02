@@ -45,8 +45,12 @@ button, input, textarea, select {
 }
 
 body {
+    color: #fdfdfd;
     color: light-dark(#121212, #fdfdfd);
+
+    background-color: #121212;
     background-color: light-dark(#fdfdfd, #121212);
+
     font-family: "Lucida Console", "Courier New", Arial, Helvetica, sans-serif;
 }
 
@@ -62,6 +66,8 @@ footer {
 /* Header Styles */
 header {
     padding: 14px 14px;
+
+    border-bottom: solid 1px #5c5c5c;
     border-bottom: solid 1px light-dark(#e0e0e0, #5c5c5c);
 }
 
@@ -110,6 +116,8 @@ header .navbar a {
 .burger-line {
     width: 25px;
     height: 3px;
+
+    background-color: #fdfdfd;
     background-color: light-dark(#121212, #fdfdfd); /* Matches color scheme */
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -161,7 +169,10 @@ header .navbar a {
         position: absolute; /* Use absolute positioning for dropdown */
         top: calc(100% + 10px); /* Position below the header */
         right: 14px;
+
+        background-color: #121212;
         background-color: light-dark(#fdfdfd, #121212); /* Match color scheme */
+
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add dropdown effect */
         padding: 10px;
         border-radius: 8px;
@@ -212,6 +223,7 @@ h1, h2 {
 }
 
 .home-wrapper a {
+    color: paleturquoise;
     color: light-dark(blue, paleturquoise);
 }
 
@@ -245,6 +257,7 @@ h1, h2 {
 }
 
 .blog-content a {
+    color: paleturquoise;
     color: light-dark(blue, paleturquoise);
 }
 
@@ -255,5 +268,6 @@ h1, h2 {
 }
 
 .blog-content em {
+    color: palegoldenrod;
     color: light-dark(goldenrod, palegoldenrod);
 }
