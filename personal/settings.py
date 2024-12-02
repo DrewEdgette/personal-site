@@ -54,6 +54,8 @@ CSRF_TRUSTED_ORIGINS = [
 
 SESSION_COOKIE_DOMAIN = 'www.drewedgette.dev'
 
+CSRF_COOKIE_SECURE = False
+
 
 ROOT_URLCONF = "personal.urls"
 
