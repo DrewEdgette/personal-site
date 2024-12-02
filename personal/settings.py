@@ -49,7 +49,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://drewedgette.dev',
     'https://www.drewedgette.dev',
     'https://127.0.0.1',
-    '157.245.210.178',
+    'http://157.245.210.178',
 ]
 
 SESSION_COOKIE_DOMAIN = 'www.drewedgette.dev'
