@@ -39,16 +39,16 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://drewedgette.dev',
-    'https://www.drewedgette.dev',
-    'https://127.0.0.1',
-    'http://157.245.210.178',
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://drewedgette.dev',
+#     'https://www.drewedgette.dev',
+#     'https://127.0.0.1',
+#     'http://157.245.210.178',
+# ]
 
-SESSION_COOKIE_DOMAIN = 'www.drewedgette.dev'
+# SESSION_COOKIE_DOMAIN = 'www.drewedgette.dev'
 
-CSRF_COOKIE_SECURE = False
+# CSRF_COOKIE_SECURE = False
 
 
 ROOT_URLCONF = "personal.urls"
