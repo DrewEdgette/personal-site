@@ -47,9 +47,9 @@ MIDDLEWARE = [
 CSRF_TRUSTED_ORIGINS = [
     'https://drewedgette.dev',
     'https://www.drewedgette.dev',
-    "157.245.210.178",
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 ROOT_URLCONF = "personal.urls"
