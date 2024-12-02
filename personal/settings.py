@@ -14,6 +14,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # DEBUG is True on Windows, False on Linux
 DEBUG = platform.system() == "Windows"
 
+
+ALLOWED_HOSTS = [
+    '157.245.210.178',
+    'drewedgette.dev',
+    'www.drewedgette.dev',
+    '127.0.0.1',
+    'localhost',
+]
+
 # Application definition
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -37,9 +46,10 @@ MIDDLEWARE = [
 
 CSRF_TRUSTED_ORIGINS = [
     'https://drewedgette.dev',
-    'http://drewedgette.dev',
-    '157.245.210.178',
+    'https://www.drewedgette.dev',
+    "157.245.210.178",
 ]
+
 
 
 ROOT_URLCONF = "personal.urls"
