@@ -14,6 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # DEBUG is True on Windows, False on Linux
 DEBUG = platform.system() == "Windows"
 
+SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
 
 ALLOWED_HOSTS = [
     '157.245.210.178',
