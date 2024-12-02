@@ -16,13 +16,7 @@ DEBUG = platform.system() == "Windows"
 
 SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
 
-ALLOWED_HOSTS = [
-    '157.245.210.178',
-    'drewedgette.dev',
-    'www.drewedgette.dev',
-    '127.0.0.1',
-    'localhost',
-]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 INSTALLED_APPS = [
