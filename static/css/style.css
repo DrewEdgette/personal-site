@@ -52,6 +52,9 @@ body {
     background-color: light-dark(#fdfdfd, #121212);
 
     font-family: "Lucida Console", "Courier New", Arial, Helvetica, sans-serif;
+
+    background-image: url();
+
 }
 
 a:hover {
@@ -65,10 +68,7 @@ footer {
 /* #################################################### */
 /* Header Styles */
 header {
-    padding: 14px 14px;
-
-    border-bottom: solid 1px #5c5c5c;
-    border-bottom: solid 1px light-dark(#e0e0e0, #5c5c5c);
+    padding: 0px 14px;
 }
 
 .header-wrapper {
@@ -78,11 +78,14 @@ header {
     max-width: 745px;
     margin: 0 auto;
     width: 100%;
-    position: relative; /* Needed for dropdown positioning */
+    padding: 14px 0;
+    position: relative;
+    border-bottom: solid 1px light-dark(#d4d4d4, #4d4d4d);
 }
 
 header .drew {
     font-size: 1.5em;
+    font-weight: bold;
 }
 
 /* Navbar Styles */
@@ -207,6 +210,7 @@ main {
 .main-wrapper {
     max-width: 745px;
     margin: 0 auto;
+    
 }
 
 h1, h2 {
@@ -270,4 +274,9 @@ h1, h2 {
 .blog-content em {
     color: palegoldenrod;
     color: light-dark(goldenrod, palegoldenrod);
+}
+
+.blog-content hr {
+    border: none;
+    border-bottom: solid 1px light-dark(#d4d4d4, #4d4d4d);
 }
