@@ -51,10 +51,7 @@ body {
     background-color: #121212;
     background-color: light-dark(#fdfdfd, #121212);
 
-    font-family: "Lucida Console", "Courier New", Arial, Helvetica, sans-serif;
-
-    background-image: url();
-
+    font-family: "Lucida Console", "Lucida Sans Typewriter", "monaco", "Bitstream Vera Sans Mono", "Courier New", "monospace";
 }
 
 a:hover {
