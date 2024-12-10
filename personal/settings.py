@@ -39,10 +39,16 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+
+CSRF_TRUSTED_ORIGINS = ["https://www.drewedgette.dev"]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_SAVE_EVERY_REQUEST = True
 SESSION_COOKIE_AGE = 86400 # sec
-SESSION_COOKIE_DOMAIN = "www.drewedgette.dev"
+SESSION_COOKIE_DOMAIN = ".drewedgette.dev"
+
 SESSION_COOKIE_NAME = 'DSESSIONID'
 SESSION_COOKIE_SECURE = True
 
