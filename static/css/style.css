@@ -44,6 +44,11 @@ button, input, textarea, select {
     color-scheme: light dark;
 }
 
+@font-face {
+    font-family: 'lucon';
+    src: url("{% static 'fonts/lucon.ttf' %}") format('truetype');
+}
+
 body {
     color: #fdfdfd;
     color: light-dark(#121212, #fdfdfd);
@@ -51,7 +56,7 @@ body {
     background-color: #121212;
     background-color: light-dark(#fdfdfd, #121212);
 
-    font-family: "Lucida Console", "Lucida Sans Typewriter", "monaco", "Bitstream Vera Sans Mono", "Courier New", "monospace";
+    font-family: "lucon", "Lucida Console", "Lucida Sans Typewriter", "monaco", "Bitstream Vera Sans Mono", "Courier New", "monospace";
 }
 
 a:hover {
