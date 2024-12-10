@@ -17,7 +17,7 @@ DEBUG = True
 
 SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
 
-ALLOWED_HOSTS = ["drewedgette.dev", "www.drewedgette.dev", "158.245.210.178", "127.0.0.1"]
+ALLOWED_HOSTS = ["drewedgette.dev", "www.drewedgette.dev", "157.245.210.178", "127.0.0.1"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -41,7 +41,7 @@ MIDDLEWARE = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = ["https://www.drewedgette.dev"]
+CSRF_TRUSTED_ORIGINS = ['https://drewedgette.dev', 'https://www.drewedgette.dev']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -50,8 +50,8 @@ SESSION_SAVE_EVERY_REQUEST = True
 SESSION_COOKIE_AGE = 86400 # sec
 SESSION_COOKIE_DOMAIN = None
 
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 CSRF_COOKIE_SAMESITE = None
 SESSION_COOKIE_SAMESITE = None
