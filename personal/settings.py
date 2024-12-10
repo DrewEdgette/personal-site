@@ -53,6 +53,9 @@ SESSION_COOKIE_DOMAIN = ".drewedgette.dev"
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 
+CSRF_COOKIE_SAMESITE = "None"
+SESSION_COOKIE_SAMESITE = "None" 
+
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
