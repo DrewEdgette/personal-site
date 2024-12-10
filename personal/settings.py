@@ -1,7 +1,6 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-from django.core.management.utils import get_random_secret_key
 import platform
 
 # Load environment variables from .env file
@@ -14,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # DEBUG is True on Windows, False on Linux
 DEBUG = platform.system() == "Windows"
 
-SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 ALLOWED_HOSTS = ["drewedgette.dev", "www.drewedgette.dev", "157.245.210.178", "127.0.0.1"]
 
@@ -42,21 +41,21 @@ MIDDLEWARE = [
 
 CSRF_TRUSTED_ORIGINS = ['https://drewedgette.dev', 'https://www.drewedgette.dev']
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-SESSION_SAVE_EVERY_REQUEST = True
-SESSION_COOKIE_AGE = 86400 # sec
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+# SESSION_SAVE_EVERY_REQUEST = True
+# SESSION_COOKIE_AGE = 86400 # sec
 SESSION_COOKIE_DOMAIN = None
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
-CSRF_COOKIE_SAMESITE = None
-SESSION_COOKIE_SAMESITE = None
+# CSRF_COOKIE_SAMESITE = None
+# SESSION_COOKIE_SAMESITE = None
 
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+# SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 
 ROOT_URLCONF = "personal.urls"
