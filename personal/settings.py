@@ -12,11 +12,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG is True on Windows, False on Linux
-DEBUG = platform.system() == "Windows"
+# DEBUG = platform.system() == "Windows"
+DEBUG = True
 
 SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["drewedgette.dev", "www.drewedgette.dev", "158.245.210.178", "127.0.0.1"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -49,8 +50,9 @@ SESSION_SAVE_EVERY_REQUEST = True
 SESSION_COOKIE_AGE = 86400 # sec
 SESSION_COOKIE_DOMAIN = ".drewedgette.dev"
 
-SESSION_COOKIE_NAME = 'DSESSIONID'
-SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
