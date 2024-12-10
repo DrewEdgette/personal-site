@@ -41,7 +41,7 @@ MIDDLEWARE = [
 ]
 
 
-# CSRF_TRUSTED_ORIGINS = ["https://www.drewedgette.dev"]
+CSRF_TRUSTED_ORIGINS = ["https://www.drewedgette.dev"]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -53,8 +53,8 @@ SESSION_COOKIE_DOMAIN = None
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 
-CSRF_COOKIE_SAMESITE = "None"
-SESSION_COOKIE_SAMESITE = "None" 
+CSRF_COOKIE_SAMESITE = None
+SESSION_COOKIE_SAMESITE = None
 
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
