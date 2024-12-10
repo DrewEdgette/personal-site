@@ -12,11 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG is True on Windows, False on Linux
-# DEBUG = platform.system() == "Windows"
-DEBUG = True
+DEBUG = platform.system() == "Windows"
 
-# SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
-SECRET_KEY = "django-insecure-w0wb3*h1n&$4or^ofymj0&s-6jejem__i42_j2&m_(@-kl+jrj"
+SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
 
 ALLOWED_HOSTS = ["drewedgette.dev", "www.drewedgette.dev", "157.245.210.178", "127.0.0.1"]
 
