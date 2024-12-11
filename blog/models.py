@@ -9,9 +9,11 @@ class Post(models.Model):
     published_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(default=False)
+    reading_time = models.IntegerField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
-        if not self.slug:  # Only generate slug if it's not already set
+        # Generate slug if not set
+        if not self.slug:
             base_slug = slugify(self.title)
             slug = base_slug
             counter = 1
@@ -20,10 +22,15 @@ class Post(models.Model):
             while Post.objects.filter(slug=slug).exists():
                 slug = f"{base_slug}-{counter}"
                 counter += 1
-            
+
             self.slug = slug
 
-        # Call the parent class's save method
+        # Calculate reading time based on word count at 220 words/minute
+        words = self.content.split()
+        word_count = len(words)
+        
+        self.reading_time = int(word_count / 220)
+
         super().save(*args, **kwargs)
 
     def __str__(self):

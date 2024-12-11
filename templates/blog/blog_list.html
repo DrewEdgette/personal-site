@@ -8,7 +8,7 @@
                 <article>
                     <h2><a href="{% url 'blog_detail' slug=post.slug %}">{{ post.title }}</a></h2>
                     <p>{{ post.published_date|date:"F j, Y" }}</p>
-                    <p>{{ post.excerpt }}</p>
+                    <p>{{ post.reading_time }} minute read</p>
                 </article>
             </li>
         {% endfor %}
