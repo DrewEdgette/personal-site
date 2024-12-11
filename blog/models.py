@@ -9,7 +9,7 @@ class Post(models.Model):
     published_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(default=False)
-    reading_time = models.IntegerField(blank=True, null=True)
+    reading_time = models.IntegerField(blank=True, null=True, default=0)
 
     def save(self, *args, **kwargs):
         # Generate slug if not set
@@ -28,7 +28,7 @@ class Post(models.Model):
         # Calculate reading time based on word count at 220 words/minute
         words = self.content.split()
         word_count = len(words)
-        
+
         self.reading_time = int(word_count / 220)
 
         super().save(*args, **kwargs)
