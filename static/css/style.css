@@ -51,7 +51,7 @@ button, input, textarea, select {
 
 body {
     color: #b7cae5;
-    color: light-dark(#121212, #b7cae5);
+    color: light-dark(#505050, #b7cae5);
 
     background-color: #0b101e;
     background-color: light-dark(#fdfdfd, #0b101e);
@@ -71,13 +71,13 @@ footer {
 
 h1 {
     font-weight: bold;
-    color: #fdfdfd;
+    color: light-dark(black, #fdfdfd);
     font-size: 3em;
 }
 
 h2 {
     font-weight: bold;
-    color: #fdfdfd;
+    color: light-dark(black, #fdfdfd);
     font-size: 2em;
 }
 
@@ -88,14 +88,15 @@ hr {
 
 /* #################################################### */
 /* Header Styles */
+
 header {
     padding: 0px 14px;
 }
 
+
 .header-wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: left;
     max-width: 745px;
     margin: 0 auto;
     width: 100%;
@@ -104,27 +105,21 @@ header {
     border-bottom: solid 1px light-dark(#d4d4d4, #4d4d4d);
 }
 
-header .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-/* Navbar Styles */
 header .navbar ul {
     display: flex;
-    gap: 30px;
+    justify-content: center; /* Centers the list items horizontally */
     list-style: none;
     position: static;
     padding: 0;
+    gap: 30px; /* Optional: keeps spacing between items */
 }
 
 header .navbar a {
     font-size: 1.3em;
-    text-align: left;
+    text-align: center; /* Aligns text inside the link */
     padding: 0;
 }
+
 
 
 /* #################################################### */
@@ -145,6 +140,14 @@ header .navbar a {
 /* #################################################### */
 /* Responsive Styles */
 @media (max-width: 700px) {
+
+    .home-wrapper {
+        text-align: center;
+    }
+
+    .header-wrapper {
+        justify-content: center;
+    }
 
     .codehilite {
         font-size: 1em;
@@ -173,6 +176,7 @@ main {
     gap: 34px;
 }
 
+
 .home-wrapper a {
     color: paleturquoise;
     color: light-dark(blue, turquoise);
@@ -190,7 +194,7 @@ main {
 }
 
 .blog-list-wrapper h2{
-    color: #fdfdfd;
+    color: light-dark(black, #fdfdfd);
 }
 
 .blog-list-wrapper p{
@@ -216,7 +220,7 @@ main {
 .blog-title h1 {
     text-transform: uppercase;
     font-weight: bold;
-    color: #fdfdfd;
+    color: light-dark(black, #fdfdfd);
 }
 
 .blog-content a {
@@ -232,7 +236,7 @@ main {
 
 .blog-content em {
     color: palegoldenrod;
-    color: light-dark(goldenrod, goldenrod);
+    color: light-dark(rgb(218, 32, 178), goldenrod);
 }
 
 .blog-content hr {
