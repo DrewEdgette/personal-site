@@ -5,7 +5,7 @@ from markdown.extensions.codehilite import CodeHiliteExtension
 
 def blog_list(request):
     posts = Post.objects.filter(is_published=True).order_by('-published_date')
-    return render(request, 'blog/blog_list.html', {'posts': posts})
+    return render(request, 'blog/blog_list.html', {'posts': posts, 'current_page': 'blog_list'})
 
 def blog_detail(request, slug):
     post = get_object_or_404(Post, slug=slug, is_published=True)
@@ -18,4 +18,4 @@ def blog_detail(request, slug):
         'markdown.extensions.toc',  # Generates a Table of Contents if needed
     ]
     )
-    return render(request, 'blog/blog_detail.html', {'post': post, 'content_html': content_html})
+    return render(request, 'blog/blog_detail.html', {'post': post, 'content_html': content_html, 'current_page': 'blog_detail'})

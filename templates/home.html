@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Drew Edgette{% endblock %}
 
 {% block content %}
 <div class="main-wrapper">
     <div class="home-wrapper">
-        <h1>Hello! My name is Drew.</h1>
+        <h1>Drew Edgette</h1>
         <p>I'm a junior data engineer at <a href="https://wsaccess.com" target="_blank">Wall Street Access</a>, designing and implementing data solutions, and automating regulatory compliance processes.</p>    
         <p>Be sure to check out my <a href="{% url 'blog_list' %}">blog</a>, where I explore the intersection of gaming and computer science!</p>
         <p>Feel free to connect with me on <a href="https://www.linkedin.com/in/drew-edgette/" target="_blank">LinkedIn</a>, or email me at <a href="mailto:drewedgette@protonmail.com">drewedgette@protonmail.com</a>.</p>

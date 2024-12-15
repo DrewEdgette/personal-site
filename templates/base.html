@@ -7,20 +7,15 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/pygments.css' %}">
-    <script src="{% static 'js/burger.js' %}"></script>
     {% block extra_head %}{% endblock %}
 </head>
 <body>
+
     <header>
         <div class="header-wrapper">
-            <a class="drew" href="{% url 'home' %}">Drew Edgette</a>
-            <button class="burger" aria-label="Toggle navigation">
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-            </button>
             <nav class="navbar">
                 <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'blog_list' %}">Blog</a></li>
                     <li><a href="https://github.com/drewedgette" target="_blank">GitHub</a></li>
                     <li><a href="{% static 'pdf/DrewEdgetteResume.pdf' %}" target="_blank">Resume</a></li>

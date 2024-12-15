@@ -46,15 +46,16 @@ button, input, textarea, select {
 
 @font-face {
     font-family: 'lucon';
-    src: url("{% static 'fonts/lucon.ttf' %}") format('truetype');
+    src: url('../fonts/lucon.ttf') format('truetype');
 }
 
 body {
-    color: #fdfdfd;
-    color: light-dark(#121212, #fdfdfd);
+    color: #b7cae5;
+    color: light-dark(#121212, #b7cae5);
 
-    background-color: #121212;
-    background-color: light-dark(#fdfdfd, #121212);
+    background-color: #0b101e;
+    background-color: light-dark(#fdfdfd, #0b101e);
+
 
     font-family: "lucon", "Lucida Console", "Lucida Sans Typewriter", "monaco", "Bitstream Vera Sans Mono", "Courier New", "monospace";
 }
@@ -65,6 +66,24 @@ a:hover {
 
 footer {
     text-align: center;
+}
+
+
+h1 {
+    font-weight: bold;
+    color: #fdfdfd;
+    font-size: 3em;
+}
+
+h2 {
+    font-weight: bold;
+    color: #fdfdfd;
+    font-size: 2em;
+}
+
+hr {
+    border: none;
+    border-bottom: solid 1px light-dark(#d4d4d4, #4d4d4d);
 }
 
 /* #################################################### */
@@ -85,78 +104,37 @@ header {
     border-bottom: solid 1px light-dark(#d4d4d4, #4d4d4d);
 }
 
-header .drew {
-    font-size: 1.5em;
-    font-weight: bold;
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 /* Navbar Styles */
 header .navbar ul {
-    display: flex; /* Show navbar by default for desktop */
-    gap: 20px; /* Spacing between links */
+    display: flex;
+    gap: 30px;
     list-style: none;
-    position: static; /* Reset positioning for desktop */
+    position: static;
     padding: 0;
 }
 
 header .navbar a {
-    font-size: 1em;
-    text-align: left; /* Align text for dropdown appearance */
-    padding: 0; /* No extra padding for desktop links */
+    font-size: 1.3em;
+    text-align: left;
+    padding: 0;
 }
-
-/* #################################################### */
-/* Burger Menu Styles */
-.burger {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    margin-left: auto; /* Aligns burger to the far right */
-}
-
-.burger-line {
-    width: 25px;
-    height: 3px;
-
-    background-color: #fdfdfd;
-    background-color: light-dark(#121212, #fdfdfd); /* Matches color scheme */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.burger.open .burger-line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.burger.open .burger-line:nth-child(2) {
-    opacity: 0; /* Hides the middle line */
-}
-
-.burger.open .burger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Show the burger on small screens */
-@media (max-width: 700px) {
-    .burger {
-        display: flex; /* Make sure burger is visible on mobile */
-    }
-}
-
-
 
 
 /* #################################################### */
 /* Code Styling */
 .codehilite {
-    background: #222e39; /* Dark background for Atlantic Night */
+    background: #1a1c21; /* Dark background for Atlantic Night */
     color: #cdd3de; /* Light text color */
     overflow-x: auto; /* Enables horizontal scrolling */
     padding: 1em; /* Add padding for readability */
-    border-radius: 5px; /* Optional: Rounded corners */
+    border-radius: 10px; /* Optional: Rounded corners */
     font-family: 'Fira Code', monospace; /* Monospaced font */
     line-height: 1.5;
     font-size: 1.7em;
@@ -167,34 +145,6 @@ header .navbar a {
 /* #################################################### */
 /* Responsive Styles */
 @media (max-width: 700px) {
-    header .navbar ul {
-        display: none; /* Hide navbar by default on small screens */
-        flex-direction: column; /* Stack items vertically for mobile dropdown */
-        gap: 10px;
-        position: absolute; /* Use absolute positioning for dropdown */
-        top: calc(100% + 10px); /* Position below the header */
-        right: 14px;
-
-        background-color: #121212;
-        background-color: light-dark(#fdfdfd, #121212); /* Match color scheme */
-
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add dropdown effect */
-        padding: 10px;
-        border-radius: 8px;
-        z-index: 1000; /* Ensure it appears above other elements */
-    }
-
-    header .navbar ul.active {
-        display: flex; /* Show navbar when the burger menu is active */
-    }
-
-    header .navbar li {
-        margin-left: 0; /* Remove left margin for dropdown items */
-    }
-
-    .burger {
-        display: flex; /* Show burger menu only on mobile screens */
-    }
 
     .codehilite {
         font-size: 1em;
@@ -206,17 +156,12 @@ header .navbar a {
 main {
     margin: 20px auto;
     font-size: 1em;
-    padding: 14px;
+    padding: 0 14px;
 }
 
 .main-wrapper {
     max-width: 745px;
     margin: 0 auto;
-    
-}
-
-h1, h2 {
-    font-weight: normal;
 }
 
 
@@ -230,8 +175,10 @@ h1, h2 {
 
 .home-wrapper a {
     color: paleturquoise;
-    color: light-dark(blue, paleturquoise);
+    color: light-dark(blue, turquoise);
 }
+
+
 
 
 /* #################################################### */
@@ -240,6 +187,10 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     gap: 34px;
+}
+
+.blog-list-wrapper h2{
+    color: #fdfdfd;
 }
 
 .blog-list-wrapper p{
@@ -264,11 +215,13 @@ h1, h2 {
 
 .blog-title h1 {
     text-transform: uppercase;
+    font-weight: bold;
+    color: #fdfdfd;
 }
 
 .blog-content a {
     color: paleturquoise;
-    color: light-dark(blue, paleturquoise);
+    color: light-dark(blue, turquoise);
 }
 
 .blog-content img {
@@ -279,7 +232,7 @@ h1, h2 {
 
 .blog-content em {
     color: palegoldenrod;
-    color: light-dark(goldenrod, palegoldenrod);
+    color: light-dark(goldenrod, goldenrod);
 }
 
 .blog-content hr {
