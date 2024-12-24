@@ -96,7 +96,8 @@ header {
 
 .header-wrapper {
     display: flex;
-    align-items: left;
+    align-items: center;
+    justify-content: center;
     max-width: 745px;
     margin: 0 auto;
     width: 100%;
@@ -174,6 +175,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 34px;
+    text-align: center;
 }
 
 
@@ -181,6 +183,7 @@ main {
     color: paleturquoise;
     color: light-dark(blue, turquoise);
 }
+
 
 
 
