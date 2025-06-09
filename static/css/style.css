@@ -1,5 +1,3 @@
-/* #################################################### */
-/* Reset and Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -16,11 +14,19 @@ body {
     font-family: sans-serif;
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, blockquote {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
     margin: 0;
 }
 
@@ -34,14 +40,15 @@ table {
     border-spacing: 0;
 }
 
-button, input, textarea, select {
-    font: inherit; /* Inherit font styles */
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 
-/* #################################################### */
-/* Root and Color Scheme */
 :root {
-    color-scheme: light dark;
+    color-scheme: dark;
 }
 
 @font-face {
@@ -51,12 +58,7 @@ button, input, textarea, select {
 
 body {
     color: #b7cae5;
-    color: light-dark(#505050, #b7cae5);
-
     background-color: #0b101e;
-    background-color: light-dark(#fdfdfd, #0b101e);
-
-
     font-family: "lucon", "Lucida Console", "Lucida Sans Typewriter", "monaco", "Bitstream Vera Sans Mono", "Courier New", "monospace";
 }
 
@@ -68,31 +70,26 @@ footer {
     text-align: center;
 }
 
-
 h1 {
     font-weight: bold;
-    color: light-dark(black, #fdfdfd);
+    color: #fdfdfd;
     font-size: 3em;
 }
 
 h2 {
     font-weight: bold;
-    color: light-dark(black, #fdfdfd);
+    color: #fdfdfd;
     font-size: 2em;
 }
 
 hr {
     border: none;
-    border-bottom: solid 1px light-dark(#d4d4d4, #4d4d4d);
+    border-bottom: solid 1px #4d4d4d;
 }
-
-/* #################################################### */
-/* Header Styles */
 
 header {
-    padding: 0px 14px;
+    padding: 0 14px;
 }
-
 
 .header-wrapper {
     display: flex;
@@ -102,60 +99,47 @@ header {
     width: 100%;
     padding: 14px 0;
     position: relative;
-    border-bottom: solid 1px light-dark(#d4d4d4, #4d4d4d);
+    border-bottom: solid 1px #b7cae5;
 }
 
 header .navbar ul {
     display: flex;
-    justify-content: center; /* Centers the list items horizontally */
+    justify-content: center;
     list-style: none;
     position: static;
     padding: 0;
-    gap: 30px; /* Optional: keeps spacing between items */
+    gap: 30px;
 }
 
 header .navbar a {
     font-size: 1.3em;
-    text-align: center; /* Aligns text inside the link */
+    text-align: center;
     padding: 0;
 }
 
-
-
-/* #################################################### */
-/* Code Styling */
 .codehilite {
-    background: #1a1c21; /* Dark background for Atlantic Night */
-    color: #cdd3de; /* Light text color */
-    overflow-x: auto; /* Enables horizontal scrolling */
-    padding: 1em; /* Add padding for readability */
-    border-radius: 10px; /* Optional: Rounded corners */
-    font-family: 'Fira Code', monospace; /* Monospaced font */
+    background: #1a1c21;
+    color: white;
+    overflow-x: auto;
+    padding: 1em;
+    border-radius: 10px;
+    font-family: 'Fira Code', monospace;
     line-height: 1.5;
-    font-size: 1.7em;
+    font-size: 1em;
 }
 
-
-
-/* #################################################### */
-/* Responsive Styles */
 @media (max-width: 700px) {
-
     .home-wrapper {
         text-align: center;
     }
-
     .header-wrapper {
         justify-content: center;
     }
-
     .codehilite {
         font-size: 1em;
     }
 }
 
-/* #################################################### */
-/* Main Content Styles */
 main {
     margin: 20px auto;
     font-size: 1em;
@@ -167,45 +151,30 @@ main {
     margin: 0 auto;
 }
 
-
-/* #################################################### */
-/* Home Wrapper Styles */
 .home-wrapper {
     display: flex;
     flex-direction: column;
     gap: 34px;
 }
 
-
 .home-wrapper a {
-    color: paleturquoise;
-    color: light-dark(blue, turquoise);
+    color: turquoise;
 }
 
-
-
-
-
-/* #################################################### */
-/* blog_list Wrapper Styles */
-.blog-list-wrapper ul{
+.blog-list-wrapper ul {
     display: flex;
     flex-direction: column;
     gap: 34px;
 }
 
-.blog-list-wrapper h2{
-    color: light-dark(black, #fdfdfd);
+.blog-list-wrapper h2 {
+    color: #fdfdfd;
 }
 
-.blog-list-wrapper p{
+.blog-list-wrapper p {
     margin: 5px 0;
 }
 
-
-
-/* #################################################### */
-/* blog Wrapper Styles */
 .blog-wrapper {
     display: flex;
     flex-direction: column;
@@ -216,17 +185,17 @@ main {
     display: flex;
     flex-direction: column;
     gap: 34px;
+    font-size: 1.5em;
 }
 
 .blog-title h1 {
     text-transform: uppercase;
     font-weight: bold;
-    color: light-dark(black, #fdfdfd);
+    color: #fdfdfd;
 }
 
 .blog-content a {
-    color: paleturquoise;
-    color: light-dark(blue, turquoise);
+    color: turquoise;
 }
 
 .blog-content img {
@@ -236,11 +205,10 @@ main {
 }
 
 .blog-content em {
-    color: palegoldenrod;
-    color: light-dark(rgb(218, 32, 178), goldenrod);
+    color: goldenrod;
 }
 
 .blog-content hr {
     border: none;
-    border-bottom: solid 1px light-dark(#d4d4d4, #4d4d4d);
+    border-bottom: solid 1px #b7cae5;
 }
